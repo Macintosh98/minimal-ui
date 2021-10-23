@@ -9,18 +9,18 @@ let initialState = {
 };
 if (localStorage.getItem('auth') !== null) {
   const authentication = JSON.parse(localStorage.getItem('auth'));
-  if (authentication.exp * 1000 > Date.now()) {
-    HTTP.setAuthorization(
-      authentication.auth_token ? `Bearer ${authentication.auth_token}` : '',
-      authentication.exp ? authentication.exp : null
-    );
-    initialState = {
-      data: {
-        login: authentication
-      },
-      status: 'idle'
-    };
-  }
+  // if (authentication.exp * 1000 > Date.now()) {
+  HTTP.setAuthorization(
+    authentication.auth_token ? `Bearer ${authentication.auth_token}` : '',
+    authentication.exp ? authentication.exp : null
+  );
+  initialState = {
+    data: {
+      login: authentication
+    },
+    status: 'idle'
+  };
+  // }
 }
 
 export const login = createAsyncThunk('authentication/login', async (data) => {
