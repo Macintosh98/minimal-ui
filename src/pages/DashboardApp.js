@@ -27,7 +27,7 @@ export default function DashboardApp() {
   //   console.log(data.username);
   // }, []);
   return (
-    <Page title="Dashboard | Minimal-UI">
+    <Page title="Dashboard | Material-You">
       {/* <Counter /> */}
       <Container maxWidth="xl">
         <Box sx={{ pb: 5 }}>

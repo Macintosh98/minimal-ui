@@ -35,7 +35,7 @@ const AccountStyle = styled('div')(({ theme }) => ({
 
 const randomProperty = function (obj) {
   console.log('obj : ', obj);
-  const keys = ['secondary', 'info', 'success', 'warning', 'error'];
+  const keys = ['primary', 'secondary', 'info', 'success', 'warning', 'error'];
   const color = obj[keys[Math.floor(Math.random() * keys.length)]].lighter;
   console.log('color :', color);
   return color;
@@ -125,7 +125,7 @@ export default function DashboardSidebar({ isOpenSidebar, onCloseSidebar }) {
 
           <Button
             fullWidth
-            href="https://material-ui.com/store/items/minimal-dashboard/"
+            href="https://Material-You.com/store/items/Material-dashboard/"
             target="_blank"
             variant="contained"
           >
