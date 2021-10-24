@@ -28,7 +28,8 @@ const MainStyle = styled('div')(({ theme }) => ({
     paddingTop: APP_BAR_DESKTOP + 24,
     paddingLeft: theme.spacing(2),
     paddingRight: theme.spacing(2)
-  }
+  },
+  backgroundColor: theme.palette.background.neutral
 }));
 
 // ----------------------------------------------------------------------

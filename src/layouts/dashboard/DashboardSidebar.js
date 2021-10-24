@@ -33,6 +33,18 @@ const AccountStyle = styled('div')(({ theme }) => ({
   backgroundColor: theme.palette.grey[200]
 }));
 
+const randomProperty = function (obj) {
+  console.log('obj : ', obj);
+  const keys = ['secondary', 'info', 'success', 'warning', 'error'];
+  const color = obj[keys[Math.floor(Math.random() * keys.length)]].lighter;
+  console.log('color :', color);
+  return color;
+};
+
+const Scrollbar2 = styled('Scrollbar')(({ theme }) => ({
+  backgroundColor: randomProperty(theme.palette)
+}));
+
 // ----------------------------------------------------------------------
 
 DashboardSidebar.propTypes = {
@@ -52,7 +64,7 @@ export default function DashboardSidebar({ isOpenSidebar, onCloseSidebar }) {
   }, [pathname]);
 
   const renderContent = (
-    <Scrollbar
+    <Scrollbar2
       sx={{
         height: '100%',
         '& .simplebar-content': { height: '100%', display: 'flex', flexDirection: 'column' }
@@ -121,7 +133,7 @@ export default function DashboardSidebar({ isOpenSidebar, onCloseSidebar }) {
           </Button>
         </Stack>
       </Box> */}
-    </Scrollbar>
+    </Scrollbar2>
   );
 
   return (
