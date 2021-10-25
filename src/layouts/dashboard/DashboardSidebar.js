@@ -30,7 +30,8 @@ const AccountStyle = styled('div')(({ theme }) => ({
   alignItems: 'center',
   padding: theme.spacing(2, 2.5),
   borderRadius: theme.shape.borderRadiusSm,
-  backgroundColor: theme.palette.grey[200]
+  backgroundColor: theme.palette.grey[200],
+  border: '1px solid rgba(145, 158, 171, 0.24)'
 }));
 
 const randomProperty = function (obj) {
@@ -42,7 +43,11 @@ const randomProperty = function (obj) {
 };
 
 const Scrollbar2 = styled('Scrollbar')(({ theme }) => ({
-  backgroundColor: randomProperty(theme.palette)
+  backgroundColor: randomProperty(theme.palette),
+  // border: '1px solid rgba(145, 158, 171, 0.24)',
+  borderRadius: '20px',
+  margin: theme.spacing(2, 2),
+  boxShadow: theme.customShadows.z12
 }));
 
 // ----------------------------------------------------------------------
@@ -143,7 +148,12 @@ export default function DashboardSidebar({ isOpenSidebar, onCloseSidebar }) {
           open={isOpenSidebar}
           onClose={onCloseSidebar}
           PaperProps={{
-            sx: { width: DRAWER_WIDTH }
+            sx: {
+              width: DRAWER_WIDTH,
+              bgcolor: 'transparent',
+              border: 'none',
+              boxShadow: 'none'
+            }
           }}
         >
           {renderContent}
@@ -157,7 +167,8 @@ export default function DashboardSidebar({ isOpenSidebar, onCloseSidebar }) {
           PaperProps={{
             sx: {
               width: DRAWER_WIDTH,
-              bgcolor: 'background.default'
+              bgcolor: 'background.neutral',
+              border: 'none'
             }
           }}
         >
